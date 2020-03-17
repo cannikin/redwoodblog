@@ -21,8 +21,8 @@ const CREATE_CONTACT = gql`
   }
 `
 
-const ContactPage = (props) => {
-  const formMethods = useForm()
+const ContactPage = () => {
+  const formMethods = useForm({ mode: 'onBlur' })
 
   const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
     onCompleted: () => {
