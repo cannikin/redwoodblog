@@ -1,11 +1,11 @@
 datasource DS {
   provider = "sqlite"
-  url = env("DB_HOST")
+  url = env("DATABASE_URL")
 }
 
 generator photonjs {
   provider = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+  binaryTargets = env("BINARY_TARGET")
 }
 
 model Post {
